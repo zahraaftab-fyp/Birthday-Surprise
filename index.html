@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SCREEN 1 - SURPRISE
+    ========================== -->
+
+    <section class="screen surprise-screen"
+             id="surpriseScreen">
+
+        <div class="surprise-gift">
+            🎁
+        </div>
+
+        <h1>A Special Surprise</h1>
+
+        <p>
+            Someone made something special for you... 💕
+        </p>
+
+        <button onclick="openBirthday()">
+            Open Your Surprise 🎁
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCREEN 2 - BIRTHDAY
+    ========================== -->
+
+    <section class="screen birthday-intro"
+             id="birthdayIntro">
+
+        <div class="birthday-decoration">
+            ✨ 🎈 ✨
+        </div>
+
+        <div class="cake-icon">
+            🎂
+        </div>
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <!-- YAHAN APNI DOST KA NAME LIKHNA -->
+        <h2>
+            YOUR FRIEND'S NAME 💕
+        </h2>
+
+        <p>
+            Today is all about you! 🌸
+        </p>
+
+        <button onclick="showWishes()">
+            Open My Wishes 💌
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCREEN 3 - WISH CARDS
+    ========================== -->
+
+    <section class="screen wishes-screen"
+             id="wishesScreen">
+
+        <h1>
+            A Few Little Surprises 💖
+        </h1>
+
+        <p class="subtitle">
+            Open them one by one... 🎁
+        </p>
+
+
+        <div class="cards-container">
+
+
+            <!-- CARD 1 -->
+
+            <div class="wish-card"
+                 id="card1">
+
+                <div class="envelope">
+
+                    <div class="envelope-back">
+                    </div>
+
+                    <div class="envelope-flap">
+                    </div>
+
+                    <div class="envelope-front">
+                    </div>
+
+                </div>
+
+                <h2>
+                    For You
+                </h2>
+
+                <button onclick="openWish(1)">
+                    Open 💌
+                </button>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="wish-card"
+                 id="card2">
+
+                <div class="envelope">
+
+                    <div class="envelope-back">
+                    </div>
+
+                    <div class="envelope-flap">
+                    </div>
+
+                    <div class="envelope-front">
+                    </div>
+
+                </div>
+
+                <h2>
+                    A Little Message
+                </h2>
+
+                <button onclick="openWish(2)">
+                    Open 💌
+                </button>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="wish-card"
+                 id="card3">
+
+                <div class="envelope">
+
+                    <div class="envelope-back">
+                    </div>
+
+                    <div class="envelope-flap">
+                    </div>
+
+                    <div class="envelope-front">
+                    </div>
+
+                </div>
+
+                <h2>
+                    My Wish
+                </h2>
+
+                <button onclick="openWish(3)">
+                    Open 💌
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCREEN 4 - WISH
+    ========================== -->
+
+    <section class="screen wish-message-screen"
+             id="wishMessageScreen">
+
+
+        <div class="falling-birthday"
+             id="fallingBirthday">
+        </div>
+
+
+        <div class="message-card">
+
+
+            <div class="big-icon"
+                 id="wishIcon">
+
+                💖
+
+            </div>
+
+
+            <h1 id="wishTitle">
+                For You
+            </h1>
+
+
+            <p id="wishText">
+                Your special birthday wish
+                will appear here.
+            </p>
+
+
+            <button onclick="backToCards()">
+                Back to Wishes 💌
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
+
+    <audio id="birthdayMusic" loop>
+
+        <source
+            src="music/birthday.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
