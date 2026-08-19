@@ -112,7 +112,7 @@ const wishes = {
         title: "For You 💕",
 
         text:
-            "Happy Birthday! 🎂 I hope your special day is filled with happiness, beautiful memories and lots of smiles. You deserve all the wonderful things in the world! 🌸"
+            "Happy Birthday to the person who makes ordinary moments feel a little more special. ❤️ I’m so grateful that you came into my life and became such an important part of it. Your smile, your little talks, and even our silly moments mean more to me than you know. I hope today brings you the same happiness that you’ve brought into my life. 🎂✨"
     },
 
 
@@ -123,7 +123,7 @@ const wishes = {
         title: "A Little Message ✨",
 
         text:
-            "May every new day of your life bring you happiness, success and beautiful moments. Always keep smiling and keep shining! 💫"
+            "Today is your day, but I feel lucky too because I get to celebrate someone so special to me. 💕 I hope you always keep that beautiful smile, keep chasing your dreams, and never forget how capable and amazing you are. No matter how many birthdays come and go, I’ll always be happy to see you growing, achieving and becoming the person you want to be. 🌸✨"
     },
 
 
@@ -134,7 +134,7 @@ const wishes = {
         title: "My Wish For You 💗",
 
         text:
-            "I wish this new chapter of your life brings you peace, success, happiness and countless beautiful memories. Happy Birthday once again! 🎉💕"
+            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my life. I’m so lucky to have you. I love you more than words can say🫀🫂. Happy Birthday, my love. 🎂❤️✨"
     }
 
 };
