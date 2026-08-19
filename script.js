@@ -134,7 +134,7 @@ const wishes = {
         title: "My Wish For You 💗",
 
         text:
-            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my lif🫀🫂.Once again Happy Birthday, my love. 🎂❤️✨"
+            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my life🫀🫂.Once again Happy Birthday, my love. 🎂❤️✨"
     }
 
 };
