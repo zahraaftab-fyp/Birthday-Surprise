@@ -112,7 +112,7 @@ const wishes = {
         title: "For You 💕",
 
         text:
-            "Happy Birthday to the person who makes ordinary moments feel a little more special. ❤️ I’m so grateful that you came into my life and became such an important part of it. Your smile, your little talks, and even our silly moments mean more to me than you know. I hope today brings you the same happiness that you’ve brought into my life. 🎂✨"
+            "Happy Birthday to the one who has a very special place in my heart. ❤️ Having you in my life has given me so many beautiful moments to remember. Your smile, your words, and even our little silly moments are precious to me. I hope your day is filled with all the happiness you deserve. Happy Birthday, my love. 🎂💕"
     },
 
 
@@ -123,7 +123,7 @@ const wishes = {
         title: "A Little Message ✨",
 
         text:
-            "Today is your day, but I feel lucky too because I get to celebrate someone so special to me. 💕 I hope you always keep that beautiful smile, keep chasing your dreams, and never forget how capable and amazing you are. No matter how many birthdays come and go, I’ll always be happy to see you growing, achieving and becoming the person you want to be. 🌸✨"
+            "Sometimes I wonder how one person can become such an important part of my life. ❤️ You have become one of my favourite reasons to smile.I hope you always know how special you are to me. Keep smiling, keep dreaming, and never forget that someone out here loves you very much. 💕✨"
     },
 
 
@@ -134,7 +134,7 @@ const wishes = {
         title: "My Wish For You 💗",
 
         text:
-            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my life. I’m so lucky to have you. I love you more than words can say🫀🫂. Happy Birthday, my love. 🎂❤️✨"
+            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my lif🫀🫂. Happy Birthday, my love. 🎂❤️✨"
     }
 
 };
