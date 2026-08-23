@@ -3,7 +3,7 @@
    YAHAN APNI 6-DIGIT PASSWORD LIKHNA HAI
 ========================================= */
 
-const PASSWORD = "123456";
+const PASSWORD = "258310";
 
 
 /* =========================================
@@ -331,7 +331,7 @@ const wishes = {
         title: "My Wish For You ❤️",
 
         text:
-            "My wish for you is that life always gives you reasons to smile and that every dream in your heart finds its way to you. ❤️ And if I could make one selfish wish, it would be to stay beside you through many more birthdays, memories, laughs and little moments. You mean so much to me. I love you, my love. ❤️🎂✨"
+            "My wish for you is that life always gives you reasons to smile and that every dream in your heart finds its way to you. ❤️ And if I could make one selfish wish, it would be to stay beside you through many more birthdays, memories, laughs and little moments.I love you, my love. ❤️🎂✨ Again Happy Birthday meri jan🫀🫂"
 
     }
 
