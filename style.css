@@ -5,339 +5,654 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
+    color: #654b4b;
 }
 
 .screen {
     min-height: 100vh;
     width: 100%;
+    padding: 25px 20px;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    padding: 25px;
+
+    position: relative;
+    overflow: hidden;
 }
 
 
-/* =========================
-   SURPRISE SCREEN
-========================= */
-
-.surprise-screen {
-    background:
-        radial-gradient(circle at 20% 20%, #f9c5d1, transparent 30%),
-        radial-gradient(circle at 80% 80%, #d8c4f1, transparent 30%),
-        linear-gradient(135deg, #fff4f7, #eee5ff);
-
-    color: #4b3159;
-}
-
-.surprise-gift {
-    font-size: 120px;
-
-    animation: giftFloat 2s ease-in-out infinite;
-}
-
-.surprise-screen h1 {
-    font-size: 50px;
-    color: #b84c79;
-
-    margin: 20px 0 10px;
-}
-
-.surprise-screen p {
-    font-size: 19px;
-    color: #765c70;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   BIRTHDAY SCREEN
-========================= */
-
-.birthday-intro {
-    display: none;
-
-    background:
-        radial-gradient(circle at 20% 20%, #f9c5d1, transparent 30%),
-        radial-gradient(circle at 80% 80%, #d8c4f1, transparent 30%),
-        linear-gradient(135deg, #fff4f7, #eee5ff);
-
-    color: #4b3159;
-}
-
-.birthday-decoration {
-    font-size: 32px;
-    letter-spacing: 15px;
-
-    margin-bottom: 15px;
-
-    animation: floating 3s ease-in-out infinite;
-}
-
-.cake-icon {
-    font-size: 100px;
-
-    animation: cakeFloat 2s ease-in-out infinite;
-}
-
-.birthday-intro h1 {
-    font-size: 58px;
-
-    color: #b84c79;
-
-    margin-top: 15px;
-}
-
-.birthday-intro h2 {
-    font-size: 34px;
-
-    color: #76519b;
-
-    margin-top: 10px;
-}
-
-.birthday-intro p {
-    font-size: 19px;
-
-    color: #765c70;
-
-    margin: 15px 0 30px;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
+/* =====================================
+   COMMON BUTTON
+===================================== */
 
 button {
     border: none;
     outline: none;
 
-    padding: 15px 32px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
 
-    border-radius: 50px;
+    padding: 14px 28px;
 
-    font-size: 17px;
-    font-weight: 600;
+    border-radius: 30px;
 
-    color: white;
+    cursor: pointer;
+
+    color: #fff;
 
     background:
         linear-gradient(
             135deg,
-            #c75b88,
-            #8c68b8
+            #d8898d,
+            #c77891
         );
 
     box-shadow:
-        0 8px 20px rgba(130, 80, 150, 0.25);
-
-    cursor: pointer;
+        0 8px 18px rgba(160, 100, 110, 0.20);
 
     transition: all 0.3s ease;
 }
 
 button:hover {
-    transform:
-        translateY(-4px)
-        scale(1.04);
+    transform: translateY(-3px) scale(1.03);
 
     box-shadow:
-        0 12px 28px rgba(130, 80, 150, 0.35);
+        0 12px 25px rgba(160, 100, 110, 0.28);
 }
 
 button:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
 }
 
 
-/* =========================
-   WISHES SCREEN
-========================= */
+/* =====================================
+   CUTE CHARACTERS
+===================================== */
 
-.wishes-screen {
-    display: none;
+.cute-character {
+    user-select: none;
+
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(130, 90, 90, 0.12)
+        );
+}
+
+.lock-character {
+    font-size: 95px;
+
+    margin-bottom: 15px;
+
+    animation:
+        characterFloat 3s ease-in-out infinite;
+}
+
+.love-character {
+    font-size: 105px;
+
+    margin-bottom: 15px;
+
+    animation:
+        characterFloat 3s ease-in-out infinite;
+}
+
+.birthday-character {
+    font-size: 95px;
+
+    margin: 8px 0;
+
+    animation:
+        characterFloat 2.5s ease-in-out infinite;
+}
+
+.small-character {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+
+    animation:
+        characterFloat 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   SCREEN 1 — LOCK
+===================================== */
+
+.lock-screen {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #f8d8c8 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            #f3cfd4 0,
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fff8ef,
+            #fbe9e2
+        );
+}
+
+.lock-box {
+    width: min(390px, 94vw);
+
+    padding: 30px 25px 28px;
+
+    border-radius: 35px;
 
     background:
-        radial-gradient(circle at 10% 10%, #f7c6d8, transparent 25%),
-        radial-gradient(circle at 90% 90%, #d7c6ef, transparent 25%),
-        linear-gradient(135deg, #fff7f9, #f0eaff);
+        rgba(255, 255, 255, 0.72);
 
-    color: #4b3159;
+    border:
+        2px solid rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 20px 50px rgba(150, 100, 90, 0.14);
+
+    backdrop-filter: blur(8px);
+}
+
+.lock-icon {
+    font-size: 45px;
+
+    margin-bottom: 8px;
+}
+
+.lock-box h1 {
+    color: #9c6267;
+
+    font-size: 31px;
+
+    margin-bottom: 8px;
+}
+
+.lock-box > p {
+    color: #80696a;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   PASSWORD DOTS
+===================================== */
+
+.password-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-bottom: 24px;
+}
+
+.password-dots span {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #ead5d1;
+
+    border:
+        2px solid #d8aaa5;
+
+    transition:
+        all 0.2s ease;
+}
+
+.password-dots span.active {
+    background: #c97882;
+
+    border-color: #c97882;
+
+    transform: scale(1.12);
+}
+
+
+/* =====================================
+   KEYPAD
+===================================== */
+
+.keypad {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    max-width: 290px;
+
+    margin: 0 auto;
+}
+
+.keypad button {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0;
+
+    border-radius: 18px;
+
+    color: #76585a;
+
+    background:
+        #fff9f5;
+
+    border:
+        1px solid #f0ded9;
+
+    box-shadow:
+        0 4px 10px rgba(130, 90, 90, 0.08);
+}
+
+.keypad button:hover {
+    background: #f8e5df;
+
+    color: #9b6065;
+}
+
+.keypad .empty-key {
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+.wrong-password {
+    min-height: 22px;
+
+    margin-top: 12px !important;
+
+    color: #c46770 !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =====================================
+   SCREEN 2 — LOVE
+===================================== */
+
+.love-screen {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #f8d1c7 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            #f4cbd2 0,
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fff8f0,
+            #fbe7e6
+        );
+}
+
+.love-card {
+    width: min(520px, 94vw);
+
+    padding: 42px 28px;
+
+    border-radius: 38px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        2px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+        0 22px 55px rgba(150, 90, 100, 0.15);
+
+    backdrop-filter: blur(8px);
+}
+
+.heart-big {
+    font-size: 75px;
+
+    margin-bottom: 5px;
+
+    animation:
+        heartBeat 1.5s ease-in-out infinite;
+}
+
+.love-card h1 {
+    color: #a85d69;
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+.love-card > p {
+    color: #80696a;
+
+    font-size: 17px;
+
+    margin-bottom: 28px;
+}
+
+.love-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.yes-button {
+    background:
+        linear-gradient(
+            135deg,
+            #d17b88,
+            #b95e76
+        );
+}
+
+.no-button {
+    background:
+        #ead4d0;
+
+    color: #775d5d;
+
+    position: relative;
+}
+
+.no-message {
+    min-height: 25px;
+
+    margin-top: 22px !important;
+
+    margin-bottom: 0 !important;
+
+    color: #a65d67 !important;
+
+    font-weight: bold;
+}
+
+
+/* =====================================
+   SCREEN 3 — BIRTHDAY
+===================================== */
+
+.birthday-screen {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            #f8d4c4 0,
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #f5cbd0 0,
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            #f7e0d2 0,
+            transparent 32%
+        ),
+        #fff8f1;
+}
+
+.birthday-decoration {
+    font-size: 30px;
+
+    letter-spacing: 10px;
+
+    margin-bottom: 8px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+.cake {
+    font-size: 90px;
+
+    margin: 3px 0;
+
+    animation:
+        cakeFloat 2s ease-in-out infinite;
+}
+
+.small-heading {
+    color: #987878;
+
+    font-size: 16px;
+
+    margin-top: 8px;
+}
+
+.birthday-screen h1 {
+    font-size: 55px;
+
+    color: #a85d69;
+
+    margin-top: 8px;
+
+    font-weight: 700;
+}
+
+.birthday-screen h2 {
+    font-size: 36px;
+
+    color: #c16e79;
+
+    margin-top: 5px;
+}
+
+.birthday-text {
+    color: #80696a;
+
+    font-size: 18px;
+
+    margin: 12px 0 27px;
+}
+
+
+/* =====================================
+   SCREEN 4 — WISHES
+===================================== */
+
+.wishes-screen {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #f8d8ca 0,
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #f3cbd2 0,
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fff8f1,
+            #fbe9e5
+        );
 }
 
 .wishes-screen h1 {
-    font-size: 44px;
+    font-size: 40px;
 
-    color: #9b4d78;
+    color: #9e6067;
 
     margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 18px;
+    color: #806b6c;
 
-    color: #76627b;
+    font-size: 17px;
 
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
-
-
-/* =========================
-   CARDS
-========================= */
 
 .cards-container {
     width: 100%;
+
     max-width: 1050px;
 
     display: flex;
 
     justify-content: center;
+
     align-items: stretch;
 
-    gap: 25px;
+    gap: 22px;
 
     flex-wrap: wrap;
 }
 
-.wish-card {
-    width: 290px;
-    min-height: 310px;
 
-    padding: 35px 25px;
+/* =====================================
+   WISH CARD
+===================================== */
+
+.wish-card {
+    width: 285px;
+
+    min-height: 330px;
+
+    padding: 30px 20px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.70);
+
+    border:
+        2px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+        0 16px 35px rgba(140, 90, 90, 0.13);
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f8dce8,
-            #e6dcf5
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.8);
-
-    box-shadow:
-        0 15px 35px rgba(117,75,135,0.20);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
 
     position: relative;
 
     overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 .wish-card::before {
-    content: "";
+    content: "✦";
 
     position: absolute;
 
-    width: 130px;
-    height: 130px;
+    top: 15px;
+    right: 20px;
 
-    top: -60px;
-    right: -50px;
+    color: #dfb4a9;
 
-    background: #f4d58d;
+    font-size: 22px;
 
-    opacity: 0.25;
-
-    border-radius: 50%;
+    opacity: 0.7;
 }
 
 .wish-card:hover {
-    transform:
-        translateY(-12px)
-        rotate(1deg);
+    transform: translateY(-8px);
 
     box-shadow:
-        0 22px 45px rgba(117,75,135,0.30);
+        0 22px 45px rgba(140, 90, 90, 0.20);
 }
 
 .wish-card h2 {
-    font-size: 25px;
+    color: #9b6468;
 
-    color: #704b83;
+    font-size: 22px;
 
-    margin-bottom: 25px;
-
-    position: relative;
-
-    z-index: 6;
+    margin-bottom: 20px;
 }
 
 
-/* =========================
+/* =====================================
    ENVELOPE
-========================= */
+===================================== */
 
 .envelope {
-    width: 140px;
-    height: 100px;
+    width: 145px;
+    height: 105px;
 
     position: relative;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     perspective: 800px;
-
-    z-index: 5;
 }
 
 .envelope-back {
     position: absolute;
 
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
-    background: #d98eaa;
+    background:
+        #e7a9a8;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     box-shadow:
-        0 8px 18px rgba(100,60,100,0.18);
+        0 8px 15px rgba(130,80,80,0.12);
 }
-
-
-/* Envelope front */
 
 .envelope-front {
     position: absolute;
 
-    left: 0;
     bottom: 0;
+    left: 0;
 
     width: 0;
     height: 0;
 
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
-    border-bottom: 58px solid #eab1c6;
+    border-left:
+        72.5px solid transparent;
+
+    border-right:
+        72.5px solid transparent;
+
+    border-bottom:
+        62px solid #f0bebe;
 
     z-index: 3;
 }
-
-
-/* Envelope flap */
 
 .envelope-flap {
     position: absolute;
@@ -348,24 +663,25 @@ button:active {
     width: 0;
     height: 0;
 
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
-    border-top: 55px solid #c87898;
+    border-left:
+        72.5px solid transparent;
 
-    transform-origin: top center;
+    border-right:
+        72.5px solid transparent;
+
+    border-top:
+        58px solid #d58e91;
+
+    transform-origin:
+        top center;
 
     transition:
-        transform 0.7s ease;
+        transform 0.75s ease;
 
-    z-index: 4;
+    z-index: 5;
 }
 
-
-/* Heart */
-
-.envelope::after {
-    content: "♡";
-
+.envelope-heart {
     position: absolute;
 
     left: 50%;
@@ -374,104 +690,111 @@ button:active {
     transform:
         translate(-50%, -50%);
 
-    color: white;
+    color: #fff7f2;
 
-    font-size: 30px;
+    font-size: 28px;
 
-    z-index: 5;
+    z-index: 6;
 
     pointer-events: none;
 }
 
-
-/* Envelope opening */
-
-.wish-card.opening .envelope-flap {
+.wish-card.opening
+.envelope-flap {
     transform:
         rotateX(180deg);
 }
 
 
-/* =========================
-   WISH MESSAGE
-========================= */
+/* =====================================
+   SCREEN 5 — MESSAGE
+===================================== */
 
-.wish-message-screen {
-    display: none;
-
-    position: relative;
-
-    overflow: hidden;
-
+.message-screen {
     background:
-        radial-gradient(circle at 15% 15%, #f6c8d9, transparent 28%),
-        radial-gradient(circle at 85% 85%, #d8c8f0, transparent 28%),
-        linear-gradient(135deg, #fff5f8, #eee7ff);
+        radial-gradient(
+            circle at 15% 15%,
+            #f8d2c5 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            #f2cbd0 0,
+            transparent 28%
+        ),
+        #fff8f2;
 }
 
-.message-card {
+.letter-wrapper {
+    width: min(650px, 94vw);
+
+    padding: 45px 32px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255,255,255,0.76);
+
+    border:
+        2px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 25px 60px rgba(130,80,80,0.15);
+
     position: relative;
 
     z-index: 10;
 
-    width: min(650px, 90%);
-
-    padding: 45px 35px;
-
-    border-radius: 32px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f9dce8,
-            #e7ddf6
-        );
-
-    box-shadow:
-        0 20px 55px rgba(86,50,100,0.18);
-
     animation:
-        messageAppear 0.8s ease;
+        letterAppear 0.8s ease;
 }
 
-.big-icon {
-    font-size: 75px;
+.letter-decoration {
+    color: #d88b91;
 
-    margin-bottom: 15px;
+    font-size: 25px;
 
-    animation:
-        heartBeat 1.5s infinite;
+    margin-bottom: 10px;
 }
 
-.message-card h1 {
-    font-size: 40px;
+.letter-icon {
+    font-size: 70px;
 
-    color: #ad4d78;
+    margin-bottom: 12px;
+
+    animation:
+        heartBeat 1.5s ease-in-out infinite;
+}
+
+.letter-wrapper h1 {
+    color: #a45d67;
+
+    font-size: 38px;
 
     margin-bottom: 20px;
 }
 
-.message-card p {
-    font-size: 19px;
+.letter-wrapper p {
+    color: #665657;
+
+    font-size: 18px;
 
     line-height: 1.8;
 
-    color: #5d4a61;
-
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 
-/* =========================
-   FALLING DECORATIONS
-========================= */
+/* =====================================
+   FALLING ITEMS
+===================================== */
 
 .falling-item {
     position: fixed;
 
-    top: -80px;
+    top: -70px;
 
-    z-index: 50;
+    z-index: 100;
 
     pointer-events: none;
 
@@ -480,71 +803,61 @@ button:active {
 }
 
 
-/* =========================
+/* =====================================
    ANIMATIONS
-========================= */
+===================================== */
 
-@keyframes giftFloat {
+@keyframes characterFloat {
 
     0%, 100% {
-        transform:
-            translateY(0)
-            rotate(0deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-15px)
-            rotate(3deg);
-    }
-}
-
-@keyframes cakeFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-14px);
-    }
-}
-
-@keyframes floating {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-10px);
+        transform: translateY(-10px);
     }
 }
 
 @keyframes heartBeat {
 
     0%, 100% {
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     50% {
-        transform:
-            scale(1.12);
+        transform: scale(1.13);
     }
 }
 
-@keyframes messageAppear {
+@keyframes cakeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes letterAppear {
 
     from {
         opacity: 0;
 
         transform:
-            scale(0.75)
+            scale(0.80)
             translateY(30px);
     }
 
@@ -561,7 +874,7 @@ button:active {
 
     0% {
         transform:
-            translateY(-80px)
+            translateY(-70px)
             rotate(0deg);
 
         opacity: 1;
@@ -577,53 +890,79 @@ button:active {
 }
 
 
-/* =========================
+/* =====================================
    MOBILE
-========================= */
+===================================== */
 
 @media (max-width: 700px) {
 
-    .surprise-screen h1 {
-        font-size: 38px;
+    .screen {
+        padding:
+            22px 15px;
     }
 
-    .surprise-gift {
-        font-size: 90px;
+    .lock-character {
+        font-size: 75px;
     }
 
-    .birthday-intro h1 {
-        font-size: 40px;
-    }
-
-    .birthday-intro h2 {
-        font-size: 27px;
-    }
-
-    .cake-icon {
+    .love-character {
         font-size: 80px;
     }
 
+    .birthday-character {
+        font-size: 75px;
+    }
+
+    .lock-box {
+        padding:
+            25px 18px;
+    }
+
+    .lock-box h1 {
+        font-size: 27px;
+    }
+
+    .love-card {
+        padding:
+            35px 20px;
+    }
+
+    .love-card h1 {
+        font-size: 34px;
+    }
+
+    .birthday-screen h1 {
+        font-size: 42px;
+    }
+
+    .birthday-screen h2 {
+        font-size: 29px;
+    }
+
+    .cake {
+        font-size: 75px;
+    }
+
     .wishes-screen h1 {
-        font-size: 32px;
+        font-size: 31px;
     }
 
     .wish-card {
-        width: 100%;
+        width: min(330px, 94vw);
 
-        max-width: 320px;
-
-        min-height: 280px;
+        min-height: 310px;
     }
 
-    .message-card {
-        padding: 35px 22px;
+    .letter-wrapper {
+        padding:
+            35px 20px;
     }
 
-    .message-card h1 {
-        font-size: 32px;
+    .letter-wrapper h1 {
+        font-size: 31px;
     }
 
-    .message-card p {
+    .letter-wrapper p {
         font-size: 17px;
     }
 }
