@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Birthday Surprise 🎂</title>
+    <title>Birthday Surprise 💕</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -18,80 +18,212 @@
 <body>
 
 
-    <!-- =========================
-         SCREEN 1 - SURPRISE
-    ========================== -->
+    <!-- =====================================
+         SCREEN 1 — LOCK / PASSWORD
+    ====================================== -->
 
-    <section class="screen surprise-screen"
-             id="surpriseScreen">
+    <section class="screen lock-screen"
+             id="lockScreen">
 
-        <div class="surprise-gift">
-            🎁
+        <div class="cute-character lock-character">
+            🧸💕
         </div>
 
-        <h1>A Special Surprise</h1>
+        <div class="lock-box">
 
-        <p>
-            Someone made something special for you... 💕
-        </p>
+            <div class="lock-icon">
+                🔒
+            </div>
 
-        <button onclick="openBirthday()">
-            Open Your Surprise 🎁
-        </button>
+            <h1>
+                A Little Surprise
+            </h1>
+
+            <p>
+                Enter the secret 6-digit code 💕
+            </p>
+
+
+            <!-- Password dots -->
+
+            <div class="password-dots"
+                 id="passwordDots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <!-- Number keypad -->
+
+            <div class="keypad">
+
+                <button onclick="pressNumber('1')">1</button>
+                <button onclick="pressNumber('2')">2</button>
+                <button onclick="pressNumber('3')">3</button>
+
+                <button onclick="pressNumber('4')">4</button>
+                <button onclick="pressNumber('5')">5</button>
+                <button onclick="pressNumber('6')">6</button>
+
+                <button onclick="pressNumber('7')">7</button>
+                <button onclick="pressNumber('8')">8</button>
+                <button onclick="pressNumber('9')">9</button>
+
+                <button class="empty-key"></button>
+
+                <button onclick="pressNumber('0')">0</button>
+
+                <button onclick="deleteNumber()">
+                    ⌫
+                </button>
+
+            </div>
+
+
+            <p class="wrong-password"
+               id="wrongPassword">
+            </p>
+
+        </div>
 
     </section>
 
 
 
-    <!-- =========================
-         SCREEN 2 - BIRTHDAY
-    ========================== -->
+    <!-- =====================================
+         SCREEN 2 — DO YOU LOVE ME?
+    ====================================== -->
 
-    <section class="screen birthday-intro"
-             id="birthdayIntro">
+    <section class="screen love-screen"
+             id="loveScreen">
+
+        <div class="cute-character love-character">
+            🧸💗
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="heart-big">
+                💕
+            </div>
+
+            <h1>
+                Do You Love Me?
+            </h1>
+
+            <p>
+                Be honest... 👀❤️
+            </p>
+
+
+            <div class="love-buttons">
+
+                <button class="yes-button"
+                        onclick="loveYes()">
+                    Yes ❤️
+                </button>
+
+                <button class="no-button"
+                        id="noButton"
+                        onclick="loveNo()">
+                    No 😏
+                </button>
+
+            </div>
+
+
+            <p class="no-message"
+               id="noMessage">
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SCREEN 3 — BIRTHDAY REVEAL
+    ====================================== -->
+
+    <section class="screen birthday-screen"
+             id="birthdayScreen">
+
 
         <div class="birthday-decoration">
             ✨ 🎈 ✨
         </div>
 
-        <div class="cake-icon">
+
+        <!-- Cute birthday cartoon -->
+
+        <div class="birthday-character">
+            🧸🎂
+        </div>
+
+
+        <div class="cake">
             🎂
         </div>
 
-        <h1>
-            Happy Birthday meri Jan
-        </h1>
 
-        <!-- YAHAN APNI DOST KA NAME LIKHNA -->
-        <h2>
-            Rehman 💕
-        </h2>
-
-        <p>
-            Today is all about you! 🌸
+        <p class="small-heading">
+            Today is your special day...
         </p>
 
-        <button onclick="showWishes()">
-            Open My Wishes 💌
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+
+        <!-- CHANGE NAME HERE -->
+
+        <h2>
+            YOUR NAME ❤️
+        </h2>
+
+
+        <p class="birthday-text">
+            You deserve all the happiness in the world. 💕
+        </p>
+
+
+        <button onclick="openWishes()">
+            Open Your Birthday Wishes 💌
         </button>
 
     </section>
 
 
 
-    <!-- =========================
-         SCREEN 3 - WISH CARDS
-    ========================== -->
+    <!-- =====================================
+         SCREEN 4 — WISH CARDS
+    ====================================== -->
 
     <section class="screen wishes-screen"
              id="wishesScreen">
 
+
+        <div class="cute-character small-character">
+            🧸💌
+        </div>
+
+
         <h1>
-            A Few Little Surprises 💖
+            A Little Something For You 💕
         </h1>
 
+
         <p class="subtitle">
-            Open them one by one... 🎁
+            Open them one by one... ✨
         </p>
 
 
@@ -105,20 +237,23 @@
 
                 <div class="envelope">
 
-                    <div class="envelope-back">
-                    </div>
+                    <div class="envelope-back"></div>
 
-                    <div class="envelope-flap">
-                    </div>
+                    <div class="envelope-flap"></div>
 
-                    <div class="envelope-front">
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-heart">
+                        ♥
                     </div>
 
                 </div>
 
+
                 <h2>
-                    For You
+                    For You 💕
                 </h2>
+
 
                 <button onclick="openWish(1)">
                     Open 💌
@@ -135,20 +270,23 @@
 
                 <div class="envelope">
 
-                    <div class="envelope-back">
-                    </div>
+                    <div class="envelope-back"></div>
 
-                    <div class="envelope-flap">
-                    </div>
+                    <div class="envelope-flap"></div>
 
-                    <div class="envelope-front">
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-heart">
+                        ♥
                     </div>
 
                 </div>
 
+
                 <h2>
-                    A Little Message
+                    A Little Message 🌸
                 </h2>
+
 
                 <button onclick="openWish(2)">
                     Open 💌
@@ -165,20 +303,23 @@
 
                 <div class="envelope">
 
-                    <div class="envelope-back">
-                    </div>
+                    <div class="envelope-back"></div>
 
-                    <div class="envelope-flap">
-                    </div>
+                    <div class="envelope-flap"></div>
 
-                    <div class="envelope-front">
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-heart">
+                        ♥
                     </div>
 
                 </div>
 
+
                 <h2>
-                    My Wish
+                    My Wish For You ❤️
                 </h2>
+
 
                 <button onclick="openWish(3)">
                     Open 💌
@@ -193,27 +334,30 @@
 
 
 
-    <!-- =========================
-         SCREEN 4 - WISH
-    ========================== -->
+    <!-- =====================================
+         SCREEN 5 — WISH MESSAGE
+    ====================================== -->
 
-    <section class="screen wish-message-screen"
-             id="wishMessageScreen">
+    <section class="screen message-screen"
+             id="messageScreen">
 
 
-        <div class="falling-birthday"
-             id="fallingBirthday">
+        <div class="falling-container"
+             id="fallingContainer">
         </div>
 
 
-        <div class="message-card">
+        <div class="letter-wrapper">
 
 
-            <div class="big-icon"
+            <div class="letter-decoration">
+                💕 ✨ 💕
+            </div>
+
+
+            <div class="letter-icon"
                  id="wishIcon">
-
                 💖
-
             </div>
 
 
@@ -223,15 +367,13 @@
 
 
             <p id="wishText">
-                Your special birthday wish
-                will appear here.
+                Your birthday wish will appear here.
             </p>
 
 
-            <button onclick="backToCards()">
+            <button onclick="backToWishes()">
                 Back to Wishes 💌
             </button>
-
 
         </div>
 
@@ -239,21 +381,23 @@
 
 
 
-    <!-- =========================
+    <!-- =====================================
          BACKGROUND MUSIC
-    ========================== -->
+    ====================================== -->
 
-    <audio id="birthdayMusic" loop>
+    <audio id="birthdayMusic"
+           loop>
 
-        <source
-            src="birthday.mp3"
-            type="audio/mpeg">
+        <source src="birthday.mp3"
+                type="audio/mpeg">
 
     </audio>
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
 
     <script src="script.js"></script>
 
