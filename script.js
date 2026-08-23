@@ -1,107 +1,302 @@
-// ===============================
-// CONFETTI / FALLING DECORATIONS
-// ===============================
+/* =========================================
+   🔐 YOUR SECRET PASSWORD
+   YAHAN APNI 6-DIGIT PASSWORD LIKHNA HAI
+========================================= */
 
-function createConfetti() {
+const PASSWORD = "123456";
 
-    const decorations = [
-        "🎉",
-        "🎊",
-        "🎈",
-        "✨",
-        "⭐",
-        "💕",
-        "💖",
-        "🌸",
-        "🎁"
-    ];
 
-    for (let i = 0; i < 45; i++) {
+/* =========================================
+   VARIABLES
+========================================= */
 
-        const item = document.createElement("div");
+let enteredPassword = "";
 
-        item.classList.add("falling-item");
 
-        item.textContent =
-            decorations[
-                Math.floor(
-                    Math.random() * decorations.length
-                )
-            ];
+/* =========================================
+   START WEBSITE
+========================================= */
 
-        item.style.left =
-            Math.random() * 100 + "vw";
+document.addEventListener("DOMContentLoaded", function () {
 
-        item.style.fontSize =
-            (18 + Math.random() * 25) + "px";
+    showScreen("lockScreen");
 
-        item.style.animationDuration =
-            (3 + Math.random() * 4) + "s";
+});
 
-        item.style.animationDelay =
-            Math.random() * 1.5 + "s";
 
-        document.body.appendChild(item);
+/* =========================================
+   SCREEN CHANGER
+========================================= */
 
-        setTimeout(function () {
-            item.remove();
-        }, 8000);
+function showScreen(screenId) {
+
+    const screens =
+        document.querySelectorAll(".screen");
+
+    screens.forEach(function (screen) {
+
+        screen.style.display = "none";
+
+    });
+
+
+    const selectedScreen =
+        document.getElementById(screenId);
+
+
+    if (selectedScreen) {
+
+        selectedScreen.style.display = "flex";
+
     }
+
 }
 
 
-// ===============================
-// OPEN SURPRISE
-// ===============================
+/* =========================================
+   🔢 PASSWORD NUMBER
+========================================= */
 
-function openBirthday() {
+function pressNumber(number) {
 
-    document.getElementById("surpriseScreen").style.display = "none";
+    if (enteredPassword.length >= 6) {
+        return;
+    }
 
-    document.getElementById("birthdayIntro").style.display = "flex";
+
+    enteredPassword += number;
 
 
-    // 🎵 Start music
+    updatePasswordDots();
+
+
+    if (enteredPassword.length === 6) {
+
+        setTimeout(function () {
+
+            checkPassword();
+
+        }, 250);
+
+    }
+
+}
+
+
+/* =========================================
+   DELETE PASSWORD NUMBER
+========================================= */
+
+function deleteNumber() {
+
+    if (enteredPassword.length === 0) {
+        return;
+    }
+
+
+    enteredPassword =
+        enteredPassword.slice(0, -1);
+
+
+    updatePasswordDots();
+
+
+    document.getElementById("wrongPassword").textContent = "";
+
+}
+
+
+/* =========================================
+   PASSWORD DOTS
+========================================= */
+
+function updatePasswordDots() {
+
+    const dots =
+        document.querySelectorAll(
+            "#passwordDots span"
+        );
+
+
+    dots.forEach(function (dot, index) {
+
+        if (index < enteredPassword.length) {
+
+            dot.classList.add("active");
+
+        } else {
+
+            dot.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   CHECK PASSWORD
+========================================= */
+
+function checkPassword() {
+
+    const message =
+        document.getElementById("wrongPassword");
+
+
+    if (enteredPassword === PASSWORD) {
+
+        message.textContent = "";
+
+
+        // Clear password
+
+        enteredPassword = "";
+
+        updatePasswordDots();
+
+
+        // Open Love Screen
+
+        setTimeout(function () {
+
+            showScreen("loveScreen");
+
+        }, 300);
+
+
+    } else {
+
+        message.textContent =
+            "Oops! Wrong code 💕 Try again.";
+
+
+        // Small shake
+
+        const box =
+            document.querySelector(".lock-box");
+
+
+        box.style.animation =
+            "shake 0.4s ease";
+
+
+        setTimeout(function () {
+
+            box.style.animation = "";
+
+        }, 500);
+
+
+        // Clear wrong password
+
+        setTimeout(function () {
+
+            enteredPassword = "";
+
+            updatePasswordDots();
+
+        }, 500);
+
+    }
+
+}
+
+
+/* =========================================
+   ❤️ YES BUTTON
+========================================= */
+
+function loveYes() {
+
+    // Hide love screen
+
+    showScreen("birthdayScreen");
+
+
+    // Start music
 
     const music =
-        document.getElementById("birthdayMusic");
+        document.getElementById(
+            "birthdayMusic"
+        );
+
 
     if (music) {
 
-        music.volume = 0.4;
+        music.volume = 0.45;
+
 
         music.play().catch(function () {
-            console.log("Music could not start.");
+
+            console.log(
+                "Music could not start."
+            );
+
         });
+
     }
 
 
-    // 🎉 Confetti
+    // 🎉 Celebration
 
     createConfetti();
+
 }
 
 
-// ===============================
-// OPEN WISHES
-// ===============================
+/* =========================================
+   😏 NO BUTTON
+========================================= */
 
-function showWishes() {
+function loveNo() {
 
-    document.getElementById("birthdayIntro").style.display = "none";
+    const message =
+        document.getElementById(
+            "noMessage"
+        );
 
-    document.getElementById("wishesScreen").style.display = "flex";
+
+    message.textContent =
+        "You have only one option 😌❤️";
 
 
-    // 🎊 Confetti
+    const noButton =
+        document.getElementById(
+            "noButton"
+        );
 
-    createConfetti();
+
+    // Make NO button disappear
+
+    setTimeout(function () {
+
+        noButton.style.display =
+            "none";
+
+    }, 700);
+
 }
 
 
-// ===============================
-// WISHES
-// ===============================
+/* =========================================
+   🎂 OPEN BIRTHDAY WISHES
+========================================= */
+
+function openWishes() {
+
+    showScreen("wishesScreen");
+
+
+    createConfetti();
+
+}
+
+
+/* =========================================
+   💌 WISHES
+========================================= */
 
 const wishes = {
 
@@ -113,6 +308,7 @@ const wishes = {
 
         text:
             "Happy Birthday to the one who has a very special place in my heart. ❤️ Having you in my life has given me so many beautiful moments to remember. Your smile, your words, and even our little silly moments are precious to me. I hope your day is filled with all the happiness you deserve. Happy Birthday, my love. 🎂💕"
+
     },
 
 
@@ -123,7 +319,8 @@ const wishes = {
         title: "A Little Message ✨",
 
         text:
-            "Sometimes I wonder how one person can become such an important part of my life. ❤️ You have become one of my favourite reasons to smile.I hope you always know how special you are to me. Keep smiling, keep dreaming, and never forget that someone out here loves you very much. 💕✨"
+            "Sometimes I wonder how one person can become such an important part of my life. ❤️ You have become one of my favourite reasons to smile, and I’m truly grateful for every moment we share. I hope you always know how special you are to me. Keep smiling, keep dreaming, and never forget that someone out here loves you very much. 💕✨"
+
     },
 
 
@@ -131,43 +328,42 @@ const wishes = {
 
         icon: "🎁",
 
-        title: "My Wish For You 💗",
+        title: "My Wish For You ❤️",
 
         text:
-            "My biggest wish is to keep seeing that beautiful smile of yours for many more birthdays. ❤️ Thank you for being you, and for being such a special part of my life🫀🫂.Once again Happy Birthday, my love. 🎂❤️✨"
+            "My wish for you is that life always gives you reasons to smile and that every dream in your heart finds its way to you. ❤️ And if I could make one selfish wish, it would be to stay beside you through many more birthdays, memories, laughs and little moments. You mean so much to me. I love you, my love. ❤️🎂✨"
+
     }
 
 };
 
 
-// ===============================
-// OPEN ENVELOPE + WISH
-// ===============================
+/* =========================================
+   💌 OPEN WISH
+========================================= */
 
 function openWish(number) {
 
     const card =
-        document.getElementById("card" + number);
+        document.getElementById(
+            "card" + number
+        );
 
 
-    // Prevent clicking multiple times
-
-    if (card.classList.contains("opening")) {
+    if (!card) {
         return;
     }
 
 
-    // 💌 Open envelope
+    // Envelope animation
 
     card.classList.add("opening");
 
 
-    // 🎉 Confetti while opening
+    // Confetti
 
     createConfetti();
 
-
-    // Wait for envelope animation
 
     setTimeout(function () {
 
@@ -175,44 +371,129 @@ function openWish(number) {
             wishes[number];
 
 
-        document.getElementById("wishesScreen").style.display =
-            "none";
-
-
-        document.getElementById("wishMessageScreen").style.display =
-            "flex";
-
-
-        document.getElementById("wishIcon").textContent =
+        document.getElementById(
+            "wishIcon"
+        ).textContent =
             wish.icon;
 
 
-        document.getElementById("wishTitle").textContent =
+        document.getElementById(
+            "wishTitle"
+        ).textContent =
             wish.title;
 
 
-        document.getElementById("wishText").textContent =
+        document.getElementById(
+            "wishText"
+        ).textContent =
             wish.text;
 
 
-        // More birthday decorations
+        showScreen("messageScreen");
+
 
         createConfetti();
 
-    }, 800);
+    }, 750);
+
 }
 
 
-// ===============================
-// BACK TO CARDS
-// ===============================
+/* =========================================
+   💌 BACK TO WISHES
+========================================= */
 
-function backToCards() {
+function backToWishes() {
 
-    document.getElementById("wishMessageScreen").style.display =
-        "none";
+    showScreen("wishesScreen");
 
-
-    document.getElementById("wishesScreen").style.display =
-        "flex";
 }
+
+
+/* =========================================
+   🎉 CONFETTI
+========================================= */
+
+function createConfetti() {
+
+    const items = [
+
+        "🎉",
+        "🎊",
+        "💕",
+        "💖",
+        "✨",
+        "🌸",
+        "💗",
+        "🎈",
+        "⭐"
+
+    ];
+
+
+    for (let i = 0; i < 35; i++) {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "falling-item";
+
+
+        item.textContent =
+            items[
+                Math.floor(
+                    Math.random() *
+                    items.length
+                )
+            ];
+
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+
+        item.style.fontSize =
+            (18 + Math.random() * 18) +
+            "px";
+
+
+        item.style.animationDuration =
+            (3 + Math.random() * 3) +
+            "s";
+
+
+        item.style.animationDelay =
+            Math.random() * 0.8 +
+            "s";
+
+
+        document.body.appendChild(item);
+
+
+        setTimeout(function () {
+
+            item.remove();
+
+        }, 7000);
+
+    }
+
+}
+
+
+/* =========================================
+   🔄 RESET WHEN PAGE RELOADS
+========================================= */
+
+window.addEventListener(
+    "pageshow",
+    function () {
+
+        enteredPassword = "";
+
+        updatePasswordDots();
+
+    }
+);
