@@ -3,7 +3,7 @@
    YAHAN APNI 6-DIGIT PASSWORD LIKHNA HAI
 ========================================= */
 
-const PASSWORD = "123456";
+const PASSWORD = "258310";
 
 
 /* =========================================
@@ -307,7 +307,7 @@ const wishes = {
         title: "For You 💕",
 
         text:
-            "Happy Birthday, Sir! 🎉 Wishing you a wonderful day filled with happiness, peace and countless reasons to smile. May you always stay blessed and successful. 🎂💕"
+            "Happy Birthday to the one who has a very special place in my heart. ❤️ Having you in my life has given me so many beautiful moments to remember. Your smile, your words, and even our little silly moments are precious to me. I hope your day is filled with all the happiness you deserve. Happy Birthday, my love.🎂💕"
 
     },
 
@@ -319,7 +319,7 @@ const wishes = {
         title: "A Little Message ✨",
 
         text:
-            "Wishing you good health, happiness and success in every step of life. May your hard work always bring you great achievements and may you continue to inspire everyone around you 💕✨"
+            "Sometimes I wonder how one person can become such an important part of my life. ❤️ You have become one of my favourite reasons to smile, and I’m truly grateful for every moment we share. I hope you always know how special you are to me. Keep smiling, keep dreaming, and never forget that someone out here loves you very much.💕✨"
 
     },
 
@@ -331,7 +331,7 @@ const wishes = {
         title: "My Wish For You ❤️",
 
         text:
-            "My sincere wish for you is that this new year of your life brings you endless happiness, success and beautiful moments. May all your dreams come true and may you always keep smiling. Happy Birthday once again, Sir! 🎂✨"
+            "My wish for you is that life always gives you reasons to smile and that every dream in your heart finds its way to you. ❤️ And if I could make one selfish wish, it would be to stay beside you through many more birthdays, memories, laughs and little moments. You mean so much to me. I love you, my love.❤️ Again Happy Birthday Meri Jan🫀🫂"
 
     }
 
