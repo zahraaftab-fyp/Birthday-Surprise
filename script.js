@@ -3,7 +3,7 @@
    YAHAN APNI 6-DIGIT PASSWORD LIKHNA HAI
 ========================================= */
 
-const PASSWORD = "258310";
+const PASSWORD = "116310";
 
 
 /* =========================================
